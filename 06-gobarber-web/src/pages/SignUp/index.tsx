@@ -1,7 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import {
- FiArrowLeft, FiMail, FiLock, FiUser
-} from 'react-icons/fi';
+import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
@@ -22,8 +20,6 @@ interface FormData {
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-
-  console.log(formRef);
 
   const handleSubmit = useCallback(async (data: FormData) => {
     try {
