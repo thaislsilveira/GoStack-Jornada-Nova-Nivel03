@@ -31,11 +31,18 @@
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
-      "settings": {
-        "import/resolver": {
-          "typescript": {}
+      "react/prop-types": "off",
+      "react/jsx-props-no-spreading": "off",
+      "no-unused-expressions": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
         }
-      }
+      ]
+
     },
     "settings": {
       "import/resolver": {
