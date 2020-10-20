@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import {Form } from '@unform/mobile';
 import {FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import api from '../../services/api';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -52,7 +53,12 @@ const SignUp: React.FC = () => {
           abortEarly: false,
         });
 
-        // await api.post('/users', data);
+        await api.post('/users', data);
+
+        Alert.alert('Cadastro realizado com sucesso!',
+        'Você já pode fazer login na aplicação. ')
+
+        navigation.goBack();
 
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
@@ -108,7 +114,7 @@ const SignUp: React.FC = () => {
           placeholder="E-mail"
           returnKeyType="next"
           onSubmitEditing={() => {
-            passwordInputRef.current?.focus()
+            passwordInputRef.current?.focus();
           }}
         />
         <Input
@@ -119,18 +125,12 @@ const SignUp: React.FC = () => {
           placeholder="Senha"
           textContentType="newPassword"
           returnKeyType="send"
-          onSubmitEditing={() => {
-            formRef.current?.submitForm();
-        }}
+          onSubmitEditing={() => formRef.current?.submitForm()}
         />
 
       </Form>
-      <Button
-            onPress={() => {
-                    formRef.current?.submitForm();
-                  }}
-                  >
-            Entrar
+        <Button onPress={() => formRef.current?.submitForm()}>
+                Entrar
         </Button>
 
     </Container>
