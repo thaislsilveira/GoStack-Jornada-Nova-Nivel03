@@ -28,8 +28,9 @@ export const Form = styled.form<FormProps>`
     color: #3a3a3a;
     border: 2px solid #fff;
 
-    ${props => props.hasError
-      && css`
+    ${(props) =>
+      props.hasError &&
+      css`
         border-color: #c53030;
       `}
 
