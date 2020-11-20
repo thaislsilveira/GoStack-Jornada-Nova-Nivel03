@@ -12,10 +12,12 @@ interface AuthState {
   token: string;
   user: User;
 }
+
 interface SignInCredentials {
   email: string;
   password: string;
 }
+
 interface AuthContextData {
   user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
@@ -25,7 +27,7 @@ interface AuthContextData {
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-export const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>(() => {
     const token = localStorage.getItem('@GoBarber:token');
     const user = localStorage.getItem('@GoBarber:user');
@@ -40,8 +42,8 @@ export const AuthProvider: React.FC = ({ children }) => {
   });
 
   const signOut = useCallback(() => {
-    localStorage.getItem('@GoBarber:token');
-    localStorage.getItem('@GoBarber:user');
+    localStorage.removeItem('@GoBarber:token');
+    localStorage.removeItem('@GoBarber:user');
 
     setData({} as AuthState);
   }, []);
@@ -73,6 +75,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     },
     [setData, data.token],
   );
+
   return (
     <AuthContext.Provider
       value={{ user: data.user, signIn, signOut, updateUser }}
@@ -82,12 +85,10 @@ export const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-export function useAuth(): AuthContextData {
+function useAuth(): AuthContextData {
   const context = useContext(AuthContext);
-
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
 
   return context;
 }
+
+export { AuthProvider, useAuth };
