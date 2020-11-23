@@ -1,6 +1,12 @@
 import React, { useCallback, useRef } from 'react';
 import {
-  View, Image, ScrollView, KeyboardAvoidingView, Platform, TextInput, Alert,
+  View,
+  Image,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+  TextInput,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import * as Yup from 'yup';
@@ -24,6 +30,7 @@ import {
   CreateAccountButton,
   CreateAccountButtonText,
 } from './styles';
+
 import getValidationErrors from '../../utils/getValidationErrors';
 
 interface SignInFormData {
@@ -86,12 +93,10 @@ const SignIn: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled
       >
-
         <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flex: 1 }}
         >
-
           <Container>
             <Image source={logoImg} />
 
@@ -108,7 +113,7 @@ const SignIn: React.FC = () => {
                 placeholder="E-mail"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-          passwordInputRef.current?.focus();
+                  passwordInputRef.current?.focus();
                 }}
               />
               <Input
@@ -119,14 +124,13 @@ const SignIn: React.FC = () => {
                 secureTextEntry
                 returnKeyType="send"
                 onSubmitEditing={() => {
-            formRef.current?.submitForm();
+                  formRef.current?.submitForm();
                 }}
               />
-
             </Form>
             <Button
               onPress={() => {
-                  formRef.current?.submitForm();
+                formRef.current?.submitForm();
               }}
             >
               Entrar
@@ -141,9 +145,7 @@ const SignIn: React.FC = () => {
 
       <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
         <Icon name="log-in" size={20} color="#ff9000" />
-        <CreateAccountButtonText>
-          Criar uma conta
-        </CreateAccountButtonText>
+        <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
   );
