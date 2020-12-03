@@ -130,7 +130,6 @@ const Profile: React.FC = () => {
         chooseFromLibraryButtonTitle: 'Escolher da galeria',
       },
       response => {
-        console.log(response);
         if (response.didCancel) {
           return;
         }
@@ -149,7 +148,9 @@ const Profile: React.FC = () => {
         });
 
         api.patch('user/avatar', data).then(apiResponse => {
-          updateUser(apiResponse.data.user);
+          console.log(apiResponse.data);
+          console.log(apiResponse.data.user);
+          updateUser(apiResponse.data);
         });
       },
     );
