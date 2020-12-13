@@ -147,10 +147,11 @@ const Profile: React.FC = () => {
           uri: response.uri,
         });
 
-        api.patch('user/avatar', data).then(apiResponse => {
-          console.log(apiResponse.data);
-          console.log(apiResponse.data.user);
-          updateUser(apiResponse.data);
+        api.patch('users/avatar', data).then(apiResponse => {
+          console.log(apiResponse.data, 'API RESPONSE');
+          console.log(user, 'MY USER BEFORE');
+          updateUser(apiResponse.data.user);
+          console.log(user, 'MY USER NOW');
         });
       },
     );
