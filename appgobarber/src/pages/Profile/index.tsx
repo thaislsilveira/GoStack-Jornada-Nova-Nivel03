@@ -148,14 +148,11 @@ const Profile: React.FC = () => {
         });
 
         api.patch('users/avatar', data).then(apiResponse => {
-          console.log(apiResponse.data, 'API RESPONSE');
-          console.log(user, 'MY USER BEFORE');
           updateUser(apiResponse.data.user);
-          console.log(user, 'MY USER NOW');
         });
       },
     );
-  }, [updateUser, user.id]);
+  }, [updateUser, user]);
 
   const handleGoBack = useCallback(() => {
     navigation.goBack();
