@@ -42,3 +42,9 @@ yarn start
     <li><a href="https://reactnative.dev/" target="_blank">React Native</a></li>  
    <li><a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a></li>  
 </ul>
+
+
+
+## Web :computer:
+
+![Web](https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/web.png)
