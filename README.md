@@ -53,8 +53,8 @@ yarn start
 
 ## Mobile :iphone:
 <div style="display:block;text-align:center">
- <img width="300" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-login.png" alt="mobile-login" />
- <img width="300" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-dashboard.png" alt="mobile-dashboard" />
- <img width="300" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-agendamento.png" alt="mobile-agendamento" />
+ <img width="250" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-login.png" alt="mobile-login" />
+ <img width="250" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-dashboard.png" alt="mobile-dashboard" />
+ <img width="250" src="https://github.com/thaislsilveira/GoStack-Jornada-Nova-Nivel03/blob/master/mobile-agendamento.png" alt="mobile-agendamento" />
 </div>
 
