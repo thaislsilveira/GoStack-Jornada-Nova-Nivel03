@@ -34,7 +34,18 @@ e em outro terminal executar o comando:
 ```
 yarn start 
 ```
-
+**AVISO IMPORTANTE** :heavy_exclamation_mark:
+ - Para que as imagens da aplicação web apareçam utilize:
+ 
+```
+APP_API_URL=http://localhost:3333
+```
+ - Para que as imagens da aplicação Mobile apareçam utilize:
+ 
+ ```
+ APP_API_URL=http://{IP da Rede}:3333
+ ```
+ 
 ## Tecnologias utilizadas 🚀
 
 <ul>
