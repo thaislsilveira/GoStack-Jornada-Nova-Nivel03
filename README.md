@@ -34,7 +34,7 @@ e em outro terminal executar o comando:
 ```
 yarn start 
 ```
-<font color="red">AVISO IMPORTANTE</font> :heavy_exclamation_mark:
+**IMPORTANTE** :heavy_exclamation_mark:
  - Para que as imagens da aplicação web apareçam utilize:
  
 ```
